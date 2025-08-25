@@ -10,9 +10,4 @@ public class Cuadrado extends PoligonoRegular {
     public double calcularArea() {
         return longitudLado * longitudLado;
     }
-
-     @Override
-    public double calcularPerimetro() {
-        return LADOS * longitudLado;
-    }
 }
