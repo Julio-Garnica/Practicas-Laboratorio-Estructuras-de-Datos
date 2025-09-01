@@ -1,10 +1,10 @@
 public class PracticaArreglos {
 
 	/**
-	 * El método genera una cadena String representado un arreglo de tipo objecto.
+	 * El metodo genera una cadena String representado un arreglo de tipo objecto.
 	 * 
 	 * @param arreglo El arreglo de tipo objeto.
-	 * @return El String en representación del arreglo de tipo objeto.
+	 * @return El String en representacion del arreglo de tipo objeto.
 	 */
 	public static String imprimeArreglo(Object[] arreglo) {
 		if (arreglo == null) {
@@ -22,10 +22,10 @@ public class PracticaArreglos {
 	}
 
 	/**
-	 * El método genera una cadena String representado un arreglo de tipo entero.
+	 * El metodo genera una cadena String representado un arreglo de tipo entero.
 	 * 
 	 * @param arreglo El arreglo de tipo entero.
-	 * @return El String en representación del arreglo de tipo entero.
+	 * @return El String en representacion del arreglo de tipo entero.
 	 */
 	public static String imprimeArreglo(int[] arreglo) {
 		if (arreglo == null) {
@@ -43,10 +43,10 @@ public class PracticaArreglos {
 	}
 
 	/**
-	 * El método genera una cadena String representado un arreglo de tipo double.
+	 * El metodo genera una cadena String representado un arreglo de tipo double.
 	 * 
 	 * @param arreglo El arreglo de tipo double.
-	 * @return El String en representación del arreglo de tipo entero.
+	 * @return El String en representacion del arreglo de tipo entero.
 	 */
 	public static String imprimeArreglo(double[] arreglo) {
 		if (arreglo == null) {
@@ -64,7 +64,7 @@ public class PracticaArreglos {
 	}
 
 	/**
-	 * El método recibe como parámetro un arreglo de tipo entero y regresa otro
+	 * El metodo recibe como parametro un arreglo de tipo entero y regresa otro
 	 * arreglo de tipo entero pero con los elementos del arreglo original volteados.
 	 * 
 	 * @param arreglo El arreglo original de tipo entero.
@@ -82,12 +82,12 @@ public class PracticaArreglos {
 	}
 
 	/**
-	 * El método genera un arreglo de tipo double con elementos iguales a las áreas
-	 * de las figuras del arreglo que se le da como parámetro.
+	 * El metodo genera un arreglo de tipo double con elementos iguales a las areas
+	 * de las figuras del arreglo que se le da como parametro.
 	 * 
 	 * @param figuras El arreglo de tipo objeto que tiene como elementos a las
 	 *                figuras.
-	 * @return El arreglo de tipo double con elementos iguales a las áreas de las
+	 * @return El arreglo de tipo double con elementos iguales a las areas de las
 	 *         figuras.
 	 */
 	public static double[] guardarAreas(Figura[] figuras) {
@@ -107,9 +107,9 @@ public class PracticaArreglos {
 	}
 
 	/**
-	 * El método genera un arreglo de tipo Persona, que como elementos tiene el
+	 * El metodo genera un arreglo de tipo Persona, que como elementos tiene el
 	 * nombre y la edad de la persona que se genera al juntar a los arreglos
-	 * originales proporcionados en los parámetros.
+	 * originales proporcionados en los parametros.
 	 * 
 	 * @param nombres El arreglo de tipo String que tiene como elementos los nombres
 	 *                de las personas.
@@ -130,14 +130,15 @@ public class PracticaArreglos {
 	}
 
 	/**
-	 * El método genera un arreglo de tamaño igual a la suma de las cardinalidades
-	 * de los arreglos que se dan como parámetros y sus elementos son los de los
-	 * arreglos parámetros.
+	 * El metodo genera un arreglo de tamaño igual a la suma de las cardinalidades
+	 * de los arreglos que se dan como parametros y sus elementos son los de los
+	 * arreglos parametros.
 	 * 
 	 * @param arreglo1 El primero arreglo de tipo entero.
 	 * @param arreglo2 El segundo arreglo de tipo entero.
-	 * @return El arreglo genero de los dos originales que tiene cardinalidad igual
-	 *         a la suma de los arreglos parámetro y los mismos elementos que estos.
+	 * @return El arreglo generado de los dos originales que tiene cardinalidad
+	 *         igual
+	 *         a la suma de los arreglos parametro y los mismos elementos que estos.
 	 */
 	public static int[] combinarArreglos(int[] arreglo1, int[] arreglo2) {
 		if (arreglo1 == null && arreglo2 == null) {
