@@ -2,6 +2,10 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * Método donde se declará los conjuntos a evaluar y después devuelve su
+ * intersección.
+ */
 public class MainTextos {
     public static void main(String[] args) {
         String archivo1 = "rosa.txt";
@@ -28,6 +32,14 @@ public class MainTextos {
         }
     }
 
+    /**
+     * Método que genera un conjunto con elementos las palabras de un texto de
+     * entrada.
+     * 
+     * @param nombreArchivo El texto a evaluar.
+     * @return Un conjunto con elementos las palabras sin repetición deun texto.
+     * @throws IOException Error leyendo los archivos .txt
+     */
     public static ConjuntoArreglo<String> crearConjuntoDeArchivo(String nombreArchivo) throws IOException {
         ConjuntoArreglo<String> conjunto = new ConjuntoArreglo<>();
         BufferedReader br = new BufferedReader(new FileReader(nombreArchivo));
@@ -36,12 +48,12 @@ public class MainTextos {
             String[] palabras = linea.split("[\\s,.¡!¿?;:()\"-]+");
             for (String palabra : palabras) {
                 if (!palabra.isEmpty()) {
-                    conjunto.agregarElemento(palabra.toLowerCase()); 
+                    conjunto.agregarElemento(palabra.toLowerCase());
                 }
             }
         }
         br.close();
-    return conjunto;
+        return conjunto;
     }
 
 }

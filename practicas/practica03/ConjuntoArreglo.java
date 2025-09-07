@@ -1,7 +1,7 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-public class ConjuntoArreglo<T> extends Conjunto<T>{
+public class ConjuntoArreglo<T> extends Conjunto<T> {
 
     @Override
     public Iterator<T> iterator() {
@@ -41,8 +41,11 @@ public class ConjuntoArreglo<T> extends Conjunto<T>{
         }
     }
 
+    /**
+     * Método que verifica sin elemento pertenece o no a un conjunto.
+     */
     public boolean pertenece(T elemento) {
-        for (int aux = 0; aux < this.obtenerCardinalidad(); aux++){
+        for (int aux = 0; aux < this.obtenerCardinalidad(); aux++) {
             if (elementos[aux].equals(elemento)) {
                 return true;
             }
@@ -50,14 +53,19 @@ public class ConjuntoArreglo<T> extends Conjunto<T>{
         return false;
     }
 
+    /**
+     * Método que agrega un elemento a un conjunto. Devolverá un nuevo conjunto solo
+     * si el elemento a agregar no pertenece al conjunto inicial, si fuera el caso
+     * contrario entonces regresa el mismo conjunto inicial.
+     */
     public ConjuntoArreglo<T> agregarElemento(T elemento) {
         if (this.pertenece(elemento)) {
             return this;
         }
-        
+
         int n = elementos.length;
-        T[] elementosNuevo = (T[]) new Object[n+1]; 
-        for(int i = 0; i < n; i++){
+        T[] elementosNuevo = (T[]) new Object[n + 1];
+        for (int i = 0; i < n; i++) {
             elementosNuevo[i] = elementos[i];
         }
         elementosNuevo[n] = elemento;
@@ -65,8 +73,11 @@ public class ConjuntoArreglo<T> extends Conjunto<T>{
         return this;
     }
 
+    /**
+     * Método que verifica si un conjunto está contenido en otro.
+     */
     public boolean contieneConjunto(Conjunto<T> c) {
-        for (T aux : c){
+        for (T aux : c) {
             if (!this.pertenece(aux)) {
                 return false;
             }
@@ -74,54 +85,69 @@ public class ConjuntoArreglo<T> extends Conjunto<T>{
         return true;
     }
 
+    /**
+     * Método que nos regresa un conjunto que resulta ser la unión de los dos
+     * conjuntos de entrada.
+     */
     public Conjunto<T> union(Conjunto<T> c) {
         T[] elementosUnionAux = (T[]) new Object[this.obtenerCardinalidad() + c.obtenerCardinalidad()];
         int contador = 0;
-        for (T aux : this){
-            elementosUnionAux [contador] = aux;
+        for (T aux : this) {
+            elementosUnionAux[contador] = aux;
             contador++;
         }
         for (T aux2 : c) {
-        boolean yaExiste = false;
-        for (int j = 0; j < contador; j++) {
-            if (elementosUnionAux[j] == aux2) {
-                yaExiste = true;
-                break;
+            boolean yaExiste = false;
+            for (int j = 0; j < contador; j++) {
+                if (elementosUnionAux[j] == aux2) {
+                    yaExiste = true;
+                    break;
+                }
+            }
+            if (!yaExiste) {
+                elementosUnionAux[contador] = aux2;
+                contador++;
             }
         }
-        if (!yaExiste) {
-            elementosUnionAux[contador] = aux2;
-            contador++;
-        }
-    }
         T[] elementosUnion = (T[]) new Object[contador];
-        for(int i = 0; i < contador; i++){
+        for (int i = 0; i < contador; i++) {
             elementosUnion[i] = elementosUnionAux[i];
         }
         return new ConjuntoArreglo<>(elementosUnion);
     }
 
+    /**
+     * Método que nos devuelve un conjunto que resulta ser la intersección de los
+     * dos conjuntos de entrada.
+     */
     public Conjunto<T> interseccion(Conjunto<T> c) {
         T[] elementosInterAux = (T[]) new Object[Math.min(this.obtenerCardinalidad(), c.obtenerCardinalidad())];
-        int contador = 0; 
-        for(T aux : c){
+        int contador = 0;
+        for (T aux : c) {
             if (this.pertenece(aux)) {
                 elementosInterAux[contador] = aux;
                 contador++;
             }
         }
         T[] elementosInter = (T[]) new Object[contador];
-        for (int i = 0; i < contador; i++){
+        for (int i = 0; i < contador; i++) {
             elementosInter[i] = elementosInterAux[i];
         }
         return new ConjuntoArreglo<>(elementosInter);
     }
 
+    /**
+     * Método que verifica si dos conjuntos son iguales por medio de una doble
+     * conjunción.
+     */
     public boolean iguales(Conjunto<T> c) {
         return this.contieneConjunto(c) && c.contieneConjunto(this);
     }
 
-    public int obtenerCardinalidad(){
+    /**
+     * Método que devuelve la cardindalidad de un conjunto.
+     */
+    public int obtenerCardinalidad() {
         return this.elementos.length;
     }
 
