@@ -133,7 +133,7 @@ public class ListaLigadaSimple<T> implements Lista<T> {
                     "ERROR: El índice proporcionado es negativo, no se puede buscar en la lista.");
         }
         if (this.longitud <= i) {
-            throw new IllegalArgumentException("ERROR: La longitud de la lista es menor al índice porporcionado.");
+            throw new IllegalArgumentException("ERROR: La longitud de la lista es menor al índice proporcionado.");
         }
 
         Nodo actual = this.cabeza;
